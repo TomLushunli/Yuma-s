@@ -4,11 +4,12 @@
  
  
 # Mac は 下 記 を 実 行 してください 。
- ./check_api_darwin <Webアプリを実行しているURL>
- 例　./check_api_darwin http://localhost:8080
+    　./check_api_darwin <Webアプリを実行しているURL>
+     
+  例　./check_api_darwin http://localhost:8080
  
  
 # Windows は 下 記 を 実 行 してください 。
- check_api.exe <Webアプリを実行しているURL> 
- 例　.check_api.exe http://localhost:8080
+    　./check_api.exe <Webアプリを実行しているURL>
+  例　./check_api.exe http://localhost:8080
 ｚ
