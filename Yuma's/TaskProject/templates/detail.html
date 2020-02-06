@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block customcss %}
+{% endblock customcss %}
+
+{% block header %}
+    <div class="alert alert-primary" role="alert">
+        個別投稿
+    </div>
+{% endblock header %}
+
+{% block content %}
+    <div class='container'>
+        <div class="alert alert-success" role="alert">
+            <p>タイトル：{{ object.title }}</p>
+            <p>投稿者：{{ object.author }}</p>
+            <p>内容：{{ object.content }}</p>
+            <p><img src='{{ object.images.url }}' width=300></p>
+
+
+            <a href="{% url 'comment' object.pk %}" class="btn btn-primary btn " tabindex="-1" role="button"
+               aria-disabled="true">コメントする</a>
+            <p><a href="{% url 'list' %}" class="btn btn-success btn " tabindex="-1" role="button"
+                  aria-disabled="true">記事一覧に戻る</a></p>
+
+            {% for comment in object.comment_set.all %}
+                <!--        ここにコメントを入れたい-->
+
+                <p>名前:{{ comment.name }}<br>
+                    テキスト:{{ comment.text }}<br>
+                </p>
+                {#        <a href="{% url 'reply' comment.pk %}">返信する</a><br>#}
+
+
+                <hr>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock content %}

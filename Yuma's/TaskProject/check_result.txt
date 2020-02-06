@@ -1,0 +1,66 @@
+==== 正常パターンチェック ===
+
+==== GET /posts リクエストチェック ===
+期待する content-type は application/json　ですが content-type が [text/html; charset=utf-8] で返っています
+content-typeのチェックに失敗
+失敗
+
+==== GET /posts/:post_id/comments リクエストチェック ===
+期待する content-type は application/json　ですが content-type が [text/html; charset=utf-8] で返っています
+content-typeのチェックに失敗
+失敗
+
+==== POST /posts/create リクエストチェック ===
+期待する status code は 200 ですが status code が 403 で返っています
+ステータスコードのチェックに失敗
+失敗
+
+==== POST /posts/:post_id/comments/create リクエストチェック ===
+期待する content-type は application/json　ですが content-type が [text/html; charset=utf-8] で返っています
+content-typeのチェックに失敗
+ポスト一覧の取得中にエラーが発生しました:  getExistsPost
+失敗
+
+==== 非正常パターンのチェック ===
+
+==== POST /posts/create テキストの長さが0 ===
+期待する status code は 400 ですが status code が 403 で返っています
+ステータスコードのチェックに失敗
+失敗
+
+==== POST /posts/create テキストの長さが101 ===
+期待する status code は 400 ですが status code が 403 で返っています
+ステータスコードのチェックに失敗
+失敗
+
+==== POST /posts/create 存在しないuser_idを指定 ===
+期待する status code は 400 ですが status code が 403 で返っています
+ステータスコードのチェックに失敗
+失敗
+
+==== POST /posts/:post_id/comments/create テキストの長さが0 ===
+期待する content-type は application/json　ですが content-type が [text/html; charset=utf-8] で返っています
+content-typeのチェックに失敗
+ポスト一覧の取得中にエラーが発生しました:  getExistsPost
+失敗
+
+==== POST /posts/:post_id/comments/create テキストの長さが101 ===
+期待する content-type は application/json　ですが content-type が [text/html; charset=utf-8] で返っています
+content-typeのチェックに失敗
+ポスト一覧の取得中にエラーが発生しました:  getExistsPost
+失敗
+
+==== POST /posts/:post_id/comments/create 存在しないuser_idを指定 ===
+期待する content-type は application/json　ですが content-type が [text/html; charset=utf-8] で返っています
+content-typeのチェックに失敗
+ポスト一覧の取得中にエラーが発生しました:  getExistsPost
+失敗
+
+==== POST /posts/:post_id/comments/create 存在しないpost_idを指定 ===
+期待する content-type は application/json　ですが content-type が [text/html; charset=utf-8] で返っています
+content-typeのチェックに失敗
+ポスト一覧の取得中にエラーが発生しました:  getExistsPost
+失敗
+
+チェックをパスした数: 0/11
+チェックに失敗しました.

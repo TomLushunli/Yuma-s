@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="container">
+            <form action='' method='POST' enctype="multipart/form-data">{% csrf_token %}
+                <p>タイトル：<input type='text' name='title'></p>
+                <p>内容：<input type='text' name='content'></p>
+                <p>画像：<input type='file' name='images'></p>
+                <input type='hidden' name='author' value='{{ user.username }}'>
+
+                <p>
+
+                    <input type='submit' class="btn btn-primary btn-lg " tabindex="-1" role="button"
+                   aria-disabled="true" value='作成する'>
+                </p>
+
+                <a href="{% url 'list' %}" class="btn btn-danger btn " tabindex="-1" role="button"
+                   aria-disabled="true">作成しない</a>
+            </form>
+
+
+
+    </div>
+{% endblock content %}

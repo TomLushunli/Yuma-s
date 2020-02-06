@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block customcss %}
+{% endblock customcss %}
+
+{% block header %}
+    <div class="alert alert-primary" role="alert">
+        掲示板風SNS
+    </div>
+{% endblock header %}
+
+{% block content %}
+    <div class='container'>
+        {% for item in object_list %}
+            <div class="alert alert-success" role="alert">
+                <p>タイトル：{{ item.title }}</p>
+                <p>投稿者：{{ item.author }}</p>
+                <a href="{% url 'detail' item.pk %}">続きを読む</a>
+
+            </div>
+        {% endfor %}
+
+
+        <a href="{% url 'create' %}" class="btn btn-info btn-lg " tabindex="-1" role="button"
+           aria-disabled="true">新規作成</a>
+    </div>
+{% endblock content %}
