@@ -1,4 +1,4 @@
-# intern2021_nagaoyuma
+# nagaoyuma
 
 
 # 実装できた機能
